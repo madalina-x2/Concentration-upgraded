@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Concentration
+//  Concentration-upgraded
 //
-//  Created by Madalina Sinca on 01/07/2019.
+//  Created by Madalina Sinca on 08/08/2019.
 //  Copyright © 2019 Madalina Sinca. All rights reserved.
 //
 

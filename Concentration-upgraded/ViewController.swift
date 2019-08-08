@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     private var emojiChoices = [String]()
     
     private var emoji = [Card:String]()
-    
+
     private let gameTheme = ["flags":       ["🇧🇷", "🇧🇪", "🇯🇵", "🇨🇦", "🇺🇸", "🇵🇪", "🇮🇪", "🇦🇷"],
                      "faces":       ["😀", "🙄", "😡", "🤢", "🤡", "😱", "😍", "🤠"],
                      "sports":      ["🏌️", "🤼‍♂️", "🥋", "🏹", "🥊", "🏊", "🤾🏿‍♂️", "🏇🏿"],
