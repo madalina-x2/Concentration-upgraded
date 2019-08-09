@@ -13,16 +13,10 @@ struct Concentration {
     
     // MARK: Properties
     
-    // The number of times the player flipped a card.
     var flipsCount = 0
     
     private(set) var cards = [Card]()
     
-    /*  The only flipped card index.
-        Used to track the first chosen card of a pair.
- 
-        This variable is used to verify if it's time
-        to check for a match or not. */
     var indexOfOneAndOnlyFaceUpCard: Int?
     
     var score = 0
@@ -60,7 +54,6 @@ struct Concentration {
         if !cards[index].isMatched {
             if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index {
                 timer()
-                // check if cards match
                 if cards[matchIndex].identifier == cards[index].identifier {
                     cards[matchIndex].isMatched = true
                     cards[index].isMatched = true
@@ -94,7 +87,6 @@ struct Concentration {
                 cards[index].isFaceUp = true
                 indexOfOneAndOnlyFaceUpCard = nil
             } else {
-                // either no cards or 2 cards are face up
                 for flipDownIndex in cards.indices {
                     cards[flipDownIndex].isFaceUp = false
                 }
@@ -114,8 +106,6 @@ struct Concentration {
     }
     
     mutating func shuffleCards() {
-        // cards = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: cards) as! [Card]
-        
         for _ in 0..<cards.count {
             let randomIndex = Int(arc4random_uniform(UInt32(cards.count)))
             cards.swapAt(0, randomIndex)
@@ -124,7 +114,6 @@ struct Concentration {
     
     mutating func resetGame() {
         flipsCount = 0
-        //cards.removeAll()
         
         for index in cards.indices {
             cards[index].isFaceUp = false
@@ -132,7 +121,5 @@ struct Concentration {
             // ?
             indexOfOneAndOnlyFaceUpCard = nil
         }
-        
-        //shuffleCards()
     }
 }
